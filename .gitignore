@@ -57,3 +57,5 @@ Makefile
 
 # data
 /data
+
+/__pycache__
