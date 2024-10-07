@@ -17,10 +17,18 @@ dev_data: 14326
 ```
 
 ## Evaluate
-
+### Top 1 
 |数据集	|WER|	SER	|BLEU|
 |----	|---	|----	|----|
 |aishell-1	|0.0584	|0.5407	|90.003|
 |aishell-4	|0.2528	|0.1905	|54.891|
-|kespeech	|0.2984	|0.1531	|62.342|
-wenetspeech	|0.1217	|0.3488	|77.622|
+|kespeec	|0.2984	|0.1531	|62.342|
+|wenetspeech	|0.1217	|0.3488	|77.622|
+
+### NBest Selection LLM 
+
+
+
+
+# References
+https://arxiv.org/pdf/2407.01909

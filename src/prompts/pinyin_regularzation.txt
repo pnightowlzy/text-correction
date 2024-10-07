@@ -1,0 +1,22 @@
+Given a list of the top N-best text outputs and N-best Pinyin transcriptions
+from a Chinese Automatic Speech Recognition (ASR) system, your task is to use
+your language understanding capabilities to correct potential errors. Analyze
+the text and Pinyin, identify discrepancies, and provide the most accurate and
+contextually appropriate correction. Consider factors like homophones, tonal
+variations, and context to ensure the corrected output accurately represents
+the intended message.
+
+N-best text outputs:
+{{nbest}}
+
+N-best Pinyin transcriptions:
+{{nbest_pinyin}}
+
+Please output the corrected text directly without any explanation. Remember not
+to change the number of characters in the corrected text. If you are not
+confident in the correction, please select the best option from the N-best list.
+If you are confident in the correction, please provide the corrected text
+directly.
+
+The output should be in the following JSON format:
+{"text": "your corrected text"}

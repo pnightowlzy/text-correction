@@ -22,6 +22,14 @@ def main():
         BLEU = evaluate_by_bleu(hypothesis, references)
         
         print(f"[WER]: {WER}\n[SER]: {SER}\n[BLEU]: {BLEU}\n")
+
+def evaluate_with_llm_selection(bus):
+    root_path = "data/processed"
+    bus_path = os.path.join(root_path, bus)
+    eval_data = load_evaluate_data(bus_path)
+    
+    
+    
         
 def load_evaluate_data(path):
     data = read_json(path)
