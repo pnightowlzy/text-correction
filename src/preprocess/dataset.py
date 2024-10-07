@@ -2,15 +2,7 @@ import sys
 import os
 from utils import *
 
-# 获取当前文件所在的目录
-current_dir = os.path.dirname(os.path.abspath(__file__))
 
-# 获取上层目录
-parent_dir = os.path.join(current_dir, '..')
-
-root_path = os.path.join(parent_dir, "data/ChineseHP/data")
-
-bus_list = os.listdir(root_path)
 
 def process(parent_path, bus):        
     bus_path = os.path.join(parent_path, bus)
@@ -33,6 +25,7 @@ def process(parent_path, bus):
 
     print(f"[{bus}]\ntrain_data: {len(train_data)}\ntest_data: {len(test_data)}\ndev_data: {len(dev_data)}\n")
     print(f"[sample]\n{train_data[0]}\n")
+    return train_data, test_data, dev_data
 
 
 def process_raw_data(parent_path):
@@ -76,8 +69,39 @@ def load_text(data_path):
     return lines
 
 
-for bus in bus_list:
-    process(root_path, bus)
+def load_bus_data():
+    # 获取当前文件所在的目录
+    current_dir = os.path.dirname(os.path.abspath(__file__))
 
+    # 获取上层目录
+    parent_dir = os.path.join(current_dir, '..')
 
+    root_path = os.path.join(parent_dir, "data/ChineseHP/data")
 
+    bus_list = os.listdir(root_path)
+    
+    store_path = os.path.join(parent_dir, "data/processed")
+    
+    data_dict = {}
+    
+    if os.path.exists(store_path) is False:
+        print('create dir: ', store_path)
+        os.mkdir(store_path)
+    
+    for bus in bus_list:
+        train_data, test_data, dev_data = process(root_path, bus)
+        bus_data = {
+            'train': train_data,
+            'test': test_data,
+            'dev': dev_data
+        }
+    
+        write_json(os.path.join(store_path, f'{bus}.json'), bus_data)
+        
+    return data_dict
+
+def main(): 
+    load_bus_data()
+
+if __name__ == "__main__":
+    main()
