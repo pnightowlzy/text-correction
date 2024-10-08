@@ -3,11 +3,11 @@ import jieba
 
 jieba.initialize()
 
+def edit_distance(s1, s2):
+    return distance.levenshtein(s1, s2)
+
 def evaluate_by_edit_distance(hypothesis, references):
-    """Evaluate the model by calculating its edit distance to a reference"""
-    def edit_distance(s1, s2):
-        return distance.levenshtein(s1, s2)
-    
+    """Evaluate the model by calculating its edit distance to a reference"""    
     total_distance, total_length = 0, 0
     total_correct = 0 
     for i in range(len(references)):

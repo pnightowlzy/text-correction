@@ -1,0 +1,12 @@
+基于提供的 N-best 文本候选和 N-best 拼音转录,纠正文本并直接输出结果。
+(Based on the provided N-best text candidates and N-best Pinyin transcriptions, correct the text and output the result directly.)  
+
+## N-best 文本候选: (N-best text candidates) 
+{{nbest}}
+
+## N-best 拼音转录: (N-best Pinyin transcriptions) 
+{{nbest_pinyin}}
+
+## 输出格式
+你不需要给出理由，直接输出下面的json格式。
+{"text": "you corrected text"}

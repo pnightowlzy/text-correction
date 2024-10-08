@@ -1,0 +1,19 @@
+基于提供的 N-best 文本候选和 N-best 拼音转录,纠正文本并直接输出结果。
+(Based on the provided N-best text candidates and N-best Pinyin transcriptions, correct the text and output the result directly.)  
+
+## N-best 文本候选: (N-best text candidates) 
+1. 今天天气很好 
+2. 今天天气很早 
+3. 今天天其很好 
+4. 今天甜气很好 
+5. 景天天气很好  
+
+## N-best 拼音转录: (N-best Pinyin transcriptions) 
+1. j in t ian t ian q i h en h ao 
+2. j in t ian t ian q i h en z ao 
+3. j in t ian t ian q i h en h ao 
+4. j in t ian t ian q i h en h ao 
+5. j ing t ian t ian q i h en h ao
+
+## 输出格式, 请直接给出你修正后的文本
+{"text": "you corrected text"}
